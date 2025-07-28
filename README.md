@@ -1,3 +1,3 @@
 # Bagan Temple
 
-An HTML & CSS depiction of the ancient Temple of Bagan.
+An HTML & SCSS depiction of the ancient Temple of Bagan.
