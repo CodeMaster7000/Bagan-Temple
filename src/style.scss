@@ -1,0 +1,322 @@
+html, body { 
+  width: 100%;
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: lightblue;
+}
+$temple-dark: #A44E38;
+$temple-medium: #D2672C;
+$temple-light: #EBA168;
+$temple-width: 40%;
+$temple-height: 90%;
+$temple-border: 2px solid black;
+$base-width: 90%;
+$base-height: 45%;
+$steps-height: 15%;
+$roof-height: 40%;
+$gate-width: 60%;
+$gate-height: 100%;
+$gate-base-height: 40%;
+$gate-crown-height: 60%;
+$door-width: 40%;
+$door-height: 150%;
+$pillar-width: 30%;
+$pillar-height: 100%;
+.temple {
+  display: flex;
+  flex-direction: column;
+  width: $temple-width;
+  height: $temple-height;
+}
+.temple__roof {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: $roof-height;
+  width: 95%;
+}
+.roof__level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+  height: 50%;
+  &--top {
+    width: 83%;
+    transform: translate(0, 1%);
+  }
+}
+.roof__section {
+  display: flex;
+  align-items: flex-end;
+  width: 100%; 
+  height: 60%;
+  &__center {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 100%;
+    &--bottom {
+      background-color: $temple-light;
+      transform: perspective(10px) rotateX(1deg);
+      border-left: $temple-border;
+      border-right: $temple-border;
+    }
+  }
+  &__decoration {
+    display: flex;
+    align-items: flex-end;
+    width: 7.5%;
+    height: 70%;
+  }
+  .spire {
+    display: flex;
+    align-self: center;
+    width: 6%;
+    height: 200%;
+    transform: translate(0, -40%) scale(2);
+  }
+  .steeple {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    height: 100%;
+    background-color: $temple-light;
+    transform: translate(0, 25%);
+    &__cut {
+      width: 50%;
+      height: 106%;
+      transform: translate(0, -2%);
+      background-color: lightblue;
+      
+      &--left {
+        border-bottom-right-radius: 100%;
+        border-right: 2px solid black;
+      }
+      &--right {
+        border-bottom-left-radius: 100%;
+        border-left: 2px solid black;
+      }
+    }
+  }
+  .dome {
+    width: 100%;
+    height: 100%;
+    border-radius: 50% / 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: $temple-light;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+  }
+}
+.roof__base {
+  width: 100%;
+  height: 40%;
+  background-color: $temple-dark;
+  border: $temple-border;
+  border-bottom: 4px solid black;
+}
+.temple__base {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: $base-width;
+  height: $base-height;
+  border-left: $temple-border;
+  border-right: $temple-border;
+  background-color: $temple-medium;
+}
+.temple__gate {
+  display: flex;
+  flex-direction: column; 
+  width: $gate-width;
+  height: $gate-height;
+  .gate__crown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: $gate-crown-height;
+    &__top {
+      display: flex;
+      width: 100%;
+      height: 50%;
+    }
+    .mount-meru {
+      display: flex;
+      width: 50%;
+      height: 100%;
+      transform: translate(1%, -5%); 
+      &--right {
+        transform: translate(-1%, -5%) scaleX(-1);
+      }
+      &__prong {
+        width: 20%;
+        height: 200%;
+        border-radius: 50%;
+        border: $temple-border;
+        background-color: $temple-light;
+        z-index: 2;
+        &--left {
+          width: 22%;
+          height: 360%;
+          transform: translate(-17%, -2%) rotate(-40deg);
+        }
+        &--center-left {
+          transform: translate(-18%, 15%) rotate(-30deg); 
+        }
+        &--center {
+          transform: translate(-12%, 5%) rotate(-20deg);
+        }
+        &--center-right {
+          transform: translate(-4%, 2%) rotate(-10deg);
+        }
+        &--right {
+          border-right: none;
+          border-radius: 100% / 50%;
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+          height: 380%;
+          transform: translate(-1%, -20%);
+        }
+      }
+    }
+    &__semi-ellipse {
+      justify-self: center;
+      width: 97%;
+      height: 50%;
+      background-color: $temple-light;
+      z-index: 1;
+      border-radius: 50% / 100%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &__bottom {
+      align-self: flex-end;
+      width: 100%;
+      height: 50%;
+      background-color: $temple-light;
+      z-index: 4;
+      border-left: $temple-border;
+      border-right: $temple-border;
+      box-sizing: border-box;
+    }
+  }
+  .gate__base {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-self: flex-end;
+    height: $gate-base-height;
+    width: 100%;
+
+    &__door {
+      width: $door-width;
+      height: $door-height;
+      background-color: black;
+      border-radius: 50% 50% 0 0; 
+      z-index: 4;
+    }
+    &__pillar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: $pillar-width;
+      height: $pillar-height;
+      border-left: $temple-border;
+      border-right: $temple-border;
+      z-index: 3;
+      background-color: $temple-light;
+      
+      .pillar--top, .pillar--bottom {
+        background-color: $temple-dark;
+        width: 120%;
+        height: 25%;
+        border: $temple-border; 
+      }
+      .pillar--top {
+        border-bottom: 4px solid black;
+      }
+    }
+  }
+}
+.temple__steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  align-self: flex-end;
+  width: 100%;
+  height: $steps-height;
+
+  &--top, &--bottom {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    border: $temple-border;
+    background-color: $temple-dark;
+  }
+  &--top {
+    width: 95%;
+  }
+  &--bottom {
+    border-bottom: 4px solid black;
+  }
+}
+.mini-stupa {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  &__base {
+    width: 100%;
+    height: 30%;
+    border-radius: 50% / 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: $temple-medium;
+    box-sizing: border-box;
+    border-left: $temple-border;
+    border-right: $temple-border; 
+    &--round {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 0.5px solid black; 
+    }
+  }
+  &__steeple {
+    display: flex;
+    width: 100%;
+    height: 70%;
+    background-color: $temple-light;
+    border-bottom: 1px solid black;
+    &__cut {
+      width: 50%;
+      height: 100%;
+      background-color: lightblue;
+      &--left {
+        border-bottom-right-radius: 100%;
+        border-right: 1px solid black;
+      }
+      &--right {
+        border-bottom-left-radius: 100%;
+        border-left: 1px solid black;
+      }
+    }
+  }
+}
+.ground {
+  width: 100%;
+  height: 5%;
+  background-color: rgba(235, 161, 104, 0.73);
+}
